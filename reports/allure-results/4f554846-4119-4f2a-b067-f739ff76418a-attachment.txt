@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": "//android.widget.TextView[@text=\"Select a username and password from the list below, or click on the usernames to automatically populate the username and password.\"]"
+}

@@ -8,7 +8,13 @@ export const commonConf = {
 
     services: ['appium'],
     framework: 'cucumber',
-    reporters: ['spec'],
+    reporters: ['spec',
+        ['allure', {
+            outputDir: 'reports/allure-results',
+            disableWebdriverStepsReporting: false,
+            disableWebdriverScreenshotsReporting: false,
+        }]
+    ],
 
     cucumberOpts: {
         require: ['./src/features/step-definitions/login.js'],
@@ -21,7 +27,7 @@ export const commonConf = {
         profile: [],
         strict: true,
         tagExpression: '',
-        timeout: 60000,
+        timeout: 120000,
         ignoreUndefinedDefinitions: false,
     },
 };

@@ -3,11 +3,15 @@ import homePage from '../../pageobjects/homePage.screen.js';
 import loginPage from '../../pageobjects/loginPage.screen.js';
 
 
-
 Before(async function () {
-    await driver.execute('mobile: activateApp', { "appId": 'com.saucelabs.mydemoapp.rn' })
-    await homePage.logOutApp();
-    console.log('launched app...')
+    try {
+        await driver.execute('mobile: activateApp', { "appId": 'com.saucelabs.mydemoapp.rn' })
+        await homePage.logOutApp();
+        console.log('launched app...')
+    }
+    catch (error) {
+        throw error;
+    }
 });
 
 Given('I launch the mobile application', async () => {
@@ -52,6 +56,11 @@ Then('login should not sucessful with error msg for {string}', async (userType) 
 });
 
 After(async function () {
-    await driver.execute('mobile: terminateApp', { "appId": 'com.saucelabs.mydemoapp.rn' })
-    console.log('closed app...')
+    try {
+        await driver.execute('mobile: terminateApp', { "appId": 'com.saucelabs.mydemoapp.rn' })
+        console.log('closed app...')
+    }
+    catch (error) {
+        throw error;
+    }
 });

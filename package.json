@@ -16,9 +16,12 @@
     "webdriverio": "^8.36.0"
   },
   "scripts": {
-    "android:mobile": "wdio config/android.conf.js"
+    "android:mobile": "wdio config/android.conf.js",
+    "open-allure": "allure generate reports/allure-results --clean && allure open"
   },
   "devDependencies": {
-    "@wdio/cli": "^9.4.0"
+    "@wdio/cli": "^9.4.0",
+    "@wdio/allure-reporter": "^9.2.14",
+    "allure-commandline": "^2.32.0"
   }
 }

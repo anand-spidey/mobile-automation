@@ -1,0 +1,8 @@
+{
+  "script": "mobile: activateApp",
+  "args": [
+    {
+      "appId": "com.saucelabs.mydemoapp.rn"
+    }
+  ]
+}
